@@ -87,6 +87,13 @@ class ExecutePreprocessor(Preprocessor, NotebookClient):
             self.nb.metadata["language_info"] = info_msg["content"]["language_info"]
             for index, cell in enumerate(self.nb.cells):
                 self.preprocess_cell(cell, resources, index)
+            try:
+                for index, cell in enumerate(self.nb.cells):
+                    self.preprocess_cell(cell, resources, index)
+            except DeadKernelError:
+                if self.allow_errors:
+                    pass
+                raise
         self.set_widgets_metadata()
 
         return self.nb, self.resources
