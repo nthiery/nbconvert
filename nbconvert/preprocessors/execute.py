@@ -85,8 +85,6 @@ class ExecutePreprocessor(Preprocessor, NotebookClient):
         with self.setup_kernel():
             info_msg = self.wait_for_reply(self.kc.kernel_info())
             self.nb.metadata["language_info"] = info_msg["content"]["language_info"]
-            for index, cell in enumerate(self.nb.cells):
-                self.preprocess_cell(cell, resources, index)
             try:
                 for index, cell in enumerate(self.nb.cells):
                     self.preprocess_cell(cell, resources, index)
