@@ -5,7 +5,7 @@ from nbclient import NotebookClient
 from nbclient import execute as _execute
 
 # Backwards compatability for imported name
-from nbclient.exceptions import CellExecutionError  # noqa
+from nbclient.exceptions import CellExecutionError, DeadKernelError  # noqa
 
 # Copyright (c) IPython Development Team.
 # Distributed under the terms of the Modified BSD License.
@@ -91,9 +91,10 @@ class ExecutePreprocessor(Preprocessor, NotebookClient):
                 for index, cell in enumerate(self.nb.cells):
                     self.preprocess_cell(cell, resources, index)
             except DeadKernelError:
-                if self.allow_errors:
-                    pass
-                raise
+                # if self.allow_errors:
+                #    pass
+                # raise
+                pass
         self.set_widgets_metadata()
 
         return self.nb, self.resources
