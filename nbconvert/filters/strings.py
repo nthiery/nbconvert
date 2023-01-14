@@ -18,7 +18,7 @@ from xml.etree.ElementTree import Element
 import bleach
 
 # defusedxml does safe(r) parsing of untrusted XML data
-from defusedxml import ElementTree
+from defusedxml import ElementTree  # type:ignore
 
 __all__ = [
     "wrap_text",
@@ -38,6 +38,8 @@ __all__ = [
     "strip_trailing_newline",
     "text_base64",
 ]
+
+from nbconvert.filters.svg_constants import ALLOWED_SVG_ATTRIBUTES, ALLOWED_SVG_TAGS
 
 
 def wrap_text(text, width=100):
@@ -79,15 +81,18 @@ def html2text(element):
 
 
 def clean_html(element):
+    """Clean an html element."""
     if isinstance(element, bytes):
         element = element.decode()
     else:
         element = str(element)
     return bleach.clean(
         element,
-        tags=[*bleach.ALLOWED_TAGS, "div", "pre", "code", "span"],
+        tags=[*bleach.ALLOWED_TAGS, *ALLOWED_SVG_TAGS, "div", "pre", "code", "span"],
+        strip_comments=False,
         attributes={
             **bleach.ALLOWED_ATTRIBUTES,
+            **{svg_tag: list(ALLOWED_SVG_ATTRIBUTES) for svg_tag in ALLOWED_SVG_TAGS},
             "*": ["class", "id"],
         },
     )

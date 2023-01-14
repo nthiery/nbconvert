@@ -2,6 +2,117 @@
 
 <!-- <START NEW CHANGELOG ENTRY> -->
 
+## 7.2.7
+
+([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.6...a32c3c1063e081d7e639b7f1670788d220b93810))
+
+### Bugs fixed
+
+- Fix Hanging Tests on Linux [#1924](https://github.com/jupyter/nbconvert/pull/1924) ([@blink1073](https://github.com/blink1073))
+
+### Maintenance and upkeep improvements
+
+- Adopt ruff and handle lint [#1925](https://github.com/jupyter/nbconvert/pull/1925) ([@blink1073](https://github.com/blink1073))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-12-05&to=2022-12-19&type=c))
+
+[@blink1073](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Ablink1073+updated%3A2022-12-05..2022-12-19&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Apre-commit-ci+updated%3A2022-12-05..2022-12-19&type=Issues)
+
+<!-- <END NEW CHANGELOG ENTRY> -->
+
+## 7.2.6
+
+([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.5...788dd3c4de1b6333e807250d0f33b59b80d5b202))
+
+### Maintenance and upkeep improvements
+
+- Include all templates in sdist [#1916](https://github.com/jupyter/nbconvert/pull/1916) ([@blink1073](https://github.com/blink1073))
+- clean up workflows [#1911](https://github.com/jupyter/nbconvert/pull/1911) ([@blink1073](https://github.com/blink1073))
+- CI Cleanup [#1910](https://github.com/jupyter/nbconvert/pull/1910) ([@blink1073](https://github.com/blink1073))
+
+### Documentation improvements
+
+- Fix docs build and switch to PyData Sphinx Theme [#1912](https://github.com/jupyter/nbconvert/pull/1912) ([@blink1073](https://github.com/blink1073))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-11-14&to=2022-12-05&type=c))
+
+[@blink1073](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Ablink1073+updated%3A2022-11-14..2022-12-05&type=Issues)
+
+## 7.2.5
+
+([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.4...e5fefbb17b0bf3d6b5bbeb9a2ee62412d75ab0d8))
+
+### Bugs fixed
+
+- Fix for webpdf print margins [#1907](https://github.com/jupyter/nbconvert/pull/1907) ([@JWock82](https://github.com/JWock82))
+
+### Maintenance and upkeep improvements
+
+- Bump actions/upload-artifact from 2 to 3 [#1904](https://github.com/jupyter/nbconvert/pull/1904) ([@dependabot](https://github.com/dependabot))
+- Bump actions/checkout from 2 to 3 [#1903](https://github.com/jupyter/nbconvert/pull/1903) ([@dependabot](https://github.com/dependabot))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-11-09&to=2022-11-14&type=c))
+
+[@dependabot](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Adependabot+updated%3A2022-11-09..2022-11-14&type=Issues) | [@JWock82](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3AJWock82+updated%3A2022-11-09..2022-11-14&type=Issues)
+
+## 7.2.4
+
+([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.3...90ca66ccf02abc59052f4f38dcc657b0d2c34a07))
+
+### Maintenance and upkeep improvements
+
+- Handle jupyter core warning [#1905](https://github.com/jupyter/nbconvert/pull/1905) ([@blink1073](https://github.com/blink1073))
+- Add dependabot [#1902](https://github.com/jupyter/nbconvert/pull/1902) ([@blink1073](https://github.com/blink1073))
+- Add Py-typed marker. [#1898](https://github.com/jupyter/nbconvert/pull/1898) ([@Carreau](https://github.com/Carreau))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-10-27&to=2022-11-09&type=c))
+
+[@blink1073](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Ablink1073+updated%3A2022-10-27..2022-11-09&type=Issues) | [@Carreau](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3ACarreau+updated%3A2022-10-27..2022-11-09&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Apre-commit-ci+updated%3A2022-10-27..2022-11-09&type=Issues)
+
+## 7.2.3
+
+([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.2...04180fdb015c56ac320d5062a81da065791c5726))
+
+### Bugs fixed
+
+- clean_html: allow SVG tags and SVG attributes  [#1890](https://github.com/jupyter/nbconvert/pull/1890) ([@akx](https://github.com/akx))
+
+### Maintenance and upkeep improvements
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-10-19&to=2022-10-27&type=c))
+
+[@akx](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Aakx+updated%3A2022-10-19..2022-10-27&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Apre-commit-ci+updated%3A2022-10-19..2022-10-27&type=Issues)
+
+## 7.2.2
+
+([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.1...a9566befb6e457b51373b61debffc78050d41273))
+
+### Bugs fixed
+
+- Fix default config test [#1885](https://github.com/jupyter/nbconvert/pull/1885) ([@blink1073](https://github.com/blink1073))
+
+### Maintenance and upkeep improvements
+
+- Add ensure label workflow [#1884](https://github.com/jupyter/nbconvert/pull/1884) ([@blink1073](https://github.com/blink1073))
+- Add release workflows [#1883](https://github.com/jupyter/nbconvert/pull/1883) ([@blink1073](https://github.com/blink1073))
+- Maintenance cleanup [#1881](https://github.com/jupyter/nbconvert/pull/1881) ([@blink1073](https://github.com/blink1073))
+
+### Contributors to this release
+
+([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-10-06&to=2022-10-19&type=c))
+
+[@blink1073](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Ablink1073+updated%3A2022-10-06..2022-10-19&type=Issues) | [@pre-commit-ci](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Apre-commit-ci+updated%3A2022-10-06..2022-10-19&type=Issues)
+
 ## 7.2.1
 
 ([Full Changelog](https://github.com/jupyter/nbconvert/compare/v7.2.0...5cfa5893e3e8fe830eec2b8abf791199a52aad07))
@@ -15,8 +126,6 @@
 ([GitHub contributors page for this release](https://github.com/jupyter/nbconvert/graphs/contributors?from=2022-10-06&to=2022-10-06&type=c))
 
 [@blink1073](https://github.com/search?q=repo%3Ajupyter%2Fnbconvert+involves%3Ablink1073+updated%3A2022-10-06..2022-10-06&type=Issues)
-
-<!-- <END NEW CHANGELOG ENTRY> -->
 
 ## 7.2.0
 

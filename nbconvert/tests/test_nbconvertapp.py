@@ -11,6 +11,7 @@ import pytest
 from traitlets.tests.utils import check_help_all_output
 
 from nbconvert.exporters import HTMLExporter
+from nbconvert.exporters.webpdf import PYPPETEER_INSTALLED
 
 from ..postprocessors import PostProcessorBase
 from ..tests.utils import onlyif_cmds_exist
@@ -148,6 +149,7 @@ class TestNbConvertApp(TestsBase):
             assert os.path.isfile("notebook with spaces.pdf")
 
     @pytest.mark.network
+    @pytest.mark.skipif(not PYPPETEER_INSTALLED, reason="Pyppeeter not installed")
     def test_webpdf_with_chromium(self):
         """
         Generate PDFs if chromium allowed to be downloaded?
@@ -245,7 +247,7 @@ class TestNbConvertApp(TestsBase):
         Does the default config work?
         """
         with self.create_temp_cwd(["notebook*.ipynb", "jupyter_nbconvert_config.py"]):
-            self.nbconvert("--log-level 0")
+            self.nbconvert("--log-level 0 --config jupyter_nbconvert_config.py")
             assert os.path.isfile("notebook1.py")
             assert not os.path.isfile("notebook2.py")
 
@@ -594,6 +596,19 @@ class TestNbConvertApp(TestsBase):
                 assert "./containerized_deployments.jpeg" not in text
                 assert "src='./containerized_deployments.jpeg'" not in text
                 assert text.count("data:image/jpeg;base64") == 3
+
+    def test_embedded_svg_remains(self):
+        """Check that the HTMLExporter doesn't scrub SVG"""
+
+        with self.create_temp_cwd(["issue1849_svg.ipynb"]):
+            self.nbconvert("issue1849_svg --log-level 0 --to html")
+            assert os.path.isfile("issue1849_svg.html")
+            with open("issue1849_svg.html", encoding="utf8") as f:
+                text = f.read()
+                assert '<g id="line2d_2">' in text  # Must not be escaped
+                # TODO: these currently break...
+                # assert '<use xlink:href=\"#m361cdeea3f\"' in text  # Must not be escaped
+                assert "<!-- 1.6 -->" in text  # Must not be stripped
 
     def test_execute_widgets_from_nbconvert(self):
         """Check jupyter widgets render"""
